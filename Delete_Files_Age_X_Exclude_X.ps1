@@ -37,5 +37,5 @@ $old_files = $all_files_exept_excluded | Where-Object {
 
 # Delete files that are included and too old.
 $old_files | ForEach-Object {
-    Remove-Item -Path $_.FullName -Force -ErrorAction SilentlyContinue #-WhatIf # Remove `-WhatIf` after testing
+    Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction SilentlyContinue #-WhatIf # Remove `-WhatIf` after testing
 }
